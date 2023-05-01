@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Suez+One&display=swap" rel="stylesheet">
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="Description" content="Author: S Pratap, Content: A dictionary to convert maori words to english.">
+</head>
+
+<body>
+	<div id="container">
+
+		<header>
+			<h1>Maori Dictionary</h1>
+		</header>
+
+		<nav>
+            <input type="checkbox" name="drop_down_menu" />
+			<span></span>
+			<span></span>
+			<span></span>
+			<ul>
+                <div class="navbar-links">
+                    <a href="/">Home</a>
+                    <a href="/vocab">Vocab</a>
+                    {% if logged_in %}
+                    <a href="/logout">Logout</a>
+                    <a href="/admin">Admin</a>
+                    {% else %}
+                    <a href="/login">Login</a>
+                    {% endif %}
+                </div>
+			</ul>
+		</nav>
+
+
+		<!--
+		=====================================================
+		== Content row of the template.                 ==
+		=====================================================
+		-->
+
+            <div class="container">
+
+{% block main %}{% endblock %}
+
+            </div>
+
+
+        <footer>
+                <p>
+                    @ Shakti Pratap
+                </p>
+        </footer>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% block main %}
+<head>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Suez+One&display=swap" rel="stylesheet">
+	<title>{% block title %}Maori Dictionary{% endblock %}</title>
+	<meta name="Description" content="Author: S Pratap, Content: A dictionary to convert maori words to english.">
+</head>
+<nav>
+    <div class="container">
+        <div class="navbar-brand">Maori Dictionary</div>
+        <div class="navbar-links"><a href="/">Home</a>
+            <a href="/vocab/1">Vocab</a>
+            {% if logged_in %}
+            <a href="/logout">Logout</a>
+            <a href="/admin">Admin</a>
+            {% else %}
+            <a href="/login">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <header>
+        <h1>Maori Dictionary</h1>
+    </header>
+</div>
+<body>
+  <div class = 'form-group'>
+    <div class="form-label">Email:</div>
+    <div class="form-element"><input type="email" name="email" id="email" required></div>
+  </div>
+  <div class = 'form-group'>
+    <div class="form-label">Password:</div>
+    <div class="form-element"><input type="password" name="password" id="password" required></div>
+  </div>
+  <div class="form-group">
+    <div class="form-label"></div>
+    <div class="form-element"><input type="submit" value="Login"></div>
+  </div>
+</body>
+</form>
+<p><br><br><br>If you don't yet have an account, please <a href="/signup">sign up</a></p>
+{% endblock %}

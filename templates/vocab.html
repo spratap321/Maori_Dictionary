@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block pageheading %}
+Vocabulary
+{% endblock %}
+
+{% block main %}
+<div class="vocab">
+<table style="width:100%">
+        <tr>
+            <th>Id</th>
+            <th>Maori</th>
+            <th>English</th>
+            <th>Category</th>
+            <th>Definition</th>
+            <th>Level</th>
+            <th>Image</th>
+        </tr>
+    {% for vocab in voc %}
+        <tr>
+            <td>{{ vocab[0] }}</td>
+            <td>{{ vocab[1] }}</td>
+            <td>{{ vocab[2] }}</td>
+            <td>{{ vocab[3] }}</td>
+            <td>{{ vocab[4] }}</td>
+            <td>{{ vocab[5] }}</td>
+            <td><img src="/static/images/{{ vocab[6] }}"></td>
+        </tr>
+    {% endfor %}
+ </table>
+</div>
+{% endblock %}
